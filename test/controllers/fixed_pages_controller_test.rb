@@ -2,7 +2,7 @@ require 'test_helper'
 
 class FixedPagesControllerTest < ActionDispatch::IntegrationTest
   test "should get home" do
-    get fixed_pages_home_url
+    get root_url
     assert_response :success
   end
 
