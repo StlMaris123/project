@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
   root 'fixed_pages#home'
   get  'help' => 'fixed_pages#help'
 
