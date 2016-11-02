@@ -49,5 +49,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :deployment do
-gem 'sqlite3'
+  gem 'sqlite3'
 end
