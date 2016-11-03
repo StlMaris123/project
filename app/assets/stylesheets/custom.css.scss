@@ -78,9 +78,6 @@ $gray-medium-light: #eaeaea;
      border-box;
 
 }
-.
-.
-.
 /* miscellaneous */
 .debug_dump {
      clear: both;
@@ -98,8 +95,6 @@ aside {
     }
     section {
         padding: 10px 0;
-    }
-}
 margin-top: 20px;
 &:first-child {
      border: 0;
@@ -129,5 +124,17 @@ h1 {
 }
 .gravatar_edit {
     margin-top: 15px;
+
+}
+/* forms */
+input, textarea, select, .uneditable-input {
+    border: 1px solid #bbb;
+    width: 100%;
+    margin-bottom: 15px;
+    @include box_sizing;
+
+}
+input {
+    height: auto !important;
 
 }
