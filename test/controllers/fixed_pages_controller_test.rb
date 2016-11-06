@@ -7,7 +7,7 @@ class FixedPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get help" do
-    get fixed_pages_help_url
+    get help_url
     assert_response :success
   end
 
