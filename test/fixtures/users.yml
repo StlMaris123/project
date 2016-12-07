@@ -5,3 +5,11 @@ stella:
   email: stellanjage@yahoo.com
   phone_number: 789456
   password_digest: <%= User.digest('password') %>
+
+boris:
+  name: Boris Njage
+  email: boris@njage.com
+  phone_number: 78945612
+  password_digest: <%= User.digest('password') %>
+
+
