@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'bcrypt'
 gem 'bootstrap-sass'
+gem 'faker'
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server
 # Use SCSS for stylesheets
