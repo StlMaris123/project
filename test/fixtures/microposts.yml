@@ -1,9 +1,11 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+architecture:
+  content: "Advanced computer architecture"
+  created_at: <%= 10.minutes.ago %>
 
-one:
-  content: MyText
-  user: one
+mis: 
+  content: "Management information system"
+  created_at: <%= 1.year.ago %>
 
-two:
-  content: MyText
-  user: two
+dis:
+  content: "Distributed systems"
+  created_at: <%= Time.zone.now %>
