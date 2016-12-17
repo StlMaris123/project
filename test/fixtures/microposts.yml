@@ -1,11 +1,22 @@
 architecture:
   content: "Advanced computer architecture"
   created_at: <%= 10.minutes.ago %>
+  user: stella
 
 mis: 
   content: "Management information system"
   created_at: <%= 1.year.ago %>
+  user: stella
 
 dis:
   content: "Distributed systems"
   created_at: <%= Time.zone.now %>
+  user: stella
+
+<% 30.times do |n| %>
+micropost_<%= n %>:
+  content: <%= Faker::Lorem.sentence(5) %>
+  created_at: <%= 42.days.ago %>
+  user: stella
+<% end %>
+
