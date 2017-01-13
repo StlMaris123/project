@@ -48,4 +48,7 @@ class PictureUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
+  def extension_white_list
+    %w(jpg jpeg gif png)
+  end
 end
