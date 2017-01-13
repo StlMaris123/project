@@ -20,3 +20,12 @@ micropost_<%= n %>:
   user: stella
 <% end %>
 
+math:
+  content: "just playing with numbers"
+  created_at: <%= 4.hours.ago %>
+  user: boris
+
+science:
+  content: "study of living things"
+  created_at: <%= 10.minutes.ago %>
+  user: lana
