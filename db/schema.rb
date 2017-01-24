@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170116113526) do
+ActiveRecord::Schema.define(version: 20170124170255) do
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.string   "learnt"
+    t.string   "problem"
+    t.string   "possible_fix"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["user_id", "created_at"], name: "index_feedbacks_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_feedbacks_on_user_id"
+  end
 
   create_table "microposts", force: :cascade do |t|
     t.text     "content"
