@@ -30,3 +30,11 @@ followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
 
+users = User.order(:created_at).take(6)
+10.times do
+  learnt = Faker::Lorem.sentence
+  problem = Faker::Lorem.sentence
+  possible_fix = Faker::Lorem.sentence
+  users.each { |user| user.feedbacks.create!(learnt: learnt, problem: problem, possible_fix: possible_fix) }
+end
+
