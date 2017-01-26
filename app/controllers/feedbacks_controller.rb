@@ -7,9 +7,9 @@ class FeedbacksController < ApplicationController
 
 
   def create
-    @feedback = Feedback.new(feedback_params)
+    @feedback = current_user.feedbacks.build(feedback_params)
     if @feedback.save
-      redirect_to user
+      redirect_to root_url
       flash[:success] = "Thanks for your feedback"
     else
       flash[:alert] = "There was a problem sending feedback"
@@ -19,6 +19,10 @@ class FeedbacksController < ApplicationController
 
   def index
     @feedbacks = current_user.feedbacks.all
+  end
+
+  def everything
+    @feedbacks = Feedback.all
   end
 
   private

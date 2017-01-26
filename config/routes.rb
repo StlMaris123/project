@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get  'help' => 'fixed_pages#help'
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
+  get 'allfeedbacks' => 'feedbacks#everything'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
   resources :users do

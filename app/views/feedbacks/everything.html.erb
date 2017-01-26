@@ -1,0 +1,23 @@
+<% provide(:title, "Feedbacks") %>
+<table>
+    <thead>
+        <tr>
+            <th>LEARNT</th>
+            <th>PROBLEM</th>
+            <th>POSSIBLE_FIX</th>
+            <th>POSTED</th>
+            <th>USER NAME</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @feedbacks.each do |feedback| %>
+            <tr>
+                <td> <%= feedback.learnt %></td>
+                <td> <%= feedback.problem %></td>
+                <td> <%= feedback.possible_fix %></td>
+                <td> <%= feedback.created_at.strftime("%d %b") %></td>
+                <td> <%= feedback.user.name %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

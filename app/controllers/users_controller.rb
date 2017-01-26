@@ -52,6 +52,9 @@ class UsersController < ApplicationController
     @user  = User.find(params[:id])
     @users = @user.following.paginate(page: params[:page])
     render 'show_follow'
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
+  end
   end
 
   def followers
@@ -66,20 +69,11 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :phone_number, :email, :password, :password_confirmation)
   end
 
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = "please log in first"
-      redirect_to login_url
-    end
-  end
-
   def correct_user
     @user = User.find(params[:id])
     redirect_to(root_url) unless current_user?(@user)
   end
 
-  def admin_user
-    redirect_to(root_url) unless current_user.admin?
-  end
+
+
 end
