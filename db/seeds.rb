@@ -3,7 +3,9 @@ User.create!(name: "Stella Njage",
              phone_number: "0763864761",
              password: "rainbow",
              password_confirmation: "rainbow",
-             admin: true)
+             admin: true,
+             activated: true,
+             activated_at: Time.zone.now)
 
 49.times do |n|
   name = Faker::Name.name
@@ -14,7 +16,9 @@ User.create!(name: "Stella Njage",
               email: email,
               phone_number: phone_number,
               password: password,
-              password_confirmation: password)
+              password_confirmation: password,
+              activated: true,
+              activated_at: Time.zone.now)
 end
 
 users = User.order(:created_at).take(6)
