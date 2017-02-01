@@ -93,4 +93,5 @@ Rails.application.configure do
     password: ENV["GMAIL_PASSWORD"]
 
   }
+  config.action_mailer.default_url_options = { :host => 'https://radiant-peak-96532.herokuapp.com/' }
 end
