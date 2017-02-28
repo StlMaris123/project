@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :microposts do
-    resoures :comments
+    resources :comments
   end
   resources :comments do
     resources :comments
