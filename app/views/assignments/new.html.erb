@@ -5,6 +5,7 @@
     <%= form_for(@assignment) do |f| %>
 
       <%= render 'shared/error_messages', object: f.object %>
+
       <%= f.label :title %>
       <%= f.text_field :title %>
 
@@ -22,6 +23,3 @@
 
       <%= f.submit 'create assign', class: 'btn btn-primary btn-sm' %>
     <% end %>
-
-  </div>
-</div>
