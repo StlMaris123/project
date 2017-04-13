@@ -15,4 +15,10 @@ class UserMailerPreview < ActionMailer::Preview
     UserMailer.password_reset(user)
   end
 
+  def new_assignment
+    user = User.first
+    assignment = Assignment.first
+    UserMailer.new_assignment(user, assignment)
+  end
+
 end
