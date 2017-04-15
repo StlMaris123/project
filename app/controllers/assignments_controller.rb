@@ -16,6 +16,10 @@ class AssignmentsController < ApplicationController
     end
   end
 
+  def index
+    @assignments = Assignment.all
+  end
+
   private
 
   def assignment_params

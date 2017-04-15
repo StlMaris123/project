@@ -1,0 +1,9 @@
+<% provide(:title, 'Assignments') %>
+<h3>Below is a list of the assignments available</h3>
+<% if @assignments.any? %>
+  <%= @assignments.each do |assignment| %>
+    <h3> <%= assignment.id %>. <%= assignment.title %></h3>
+    <p> <%= assignment.description %></p>
+    <p> <%=  assignment.link%></p>
+  <% end %>
+<% end %>
