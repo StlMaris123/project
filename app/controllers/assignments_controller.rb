@@ -16,8 +16,18 @@ class AssignmentsController < ApplicationController
     end
   end
 
+  def show
+    @assignment = Assignment.find(params[:id])
+  end
+
   def index
     @assignments = Assignment.all
+  end
+
+  def destroy
+    Assignment.find(params[:id]).destroy
+    flash[:success] ="assignment  deleted"
+    redirect_to assignments_url
   end
 
   private

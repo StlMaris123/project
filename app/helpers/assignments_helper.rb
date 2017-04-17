@@ -7,13 +7,13 @@ module AssignmentsHelper
     if assignment.due_date.future?
       distance_of_time_in_words(Time.zone.now, assignment.due_date)
     else
-      o
+      0
     end
   end
 
-  def percentage_remaining assignmment
+  def percentage_remaining assignment
     if assignment.due_date.future?
-      percentage = ((assignment.due_date - Time.zonne.now)/ max_days(assignment)) * 100
+      percentage = ((assignment.due_date - Time.zone.now)/ max_days(assignment)) * 100
       if percentage.to_i >= 0
         percentage.to_i
       else
@@ -28,7 +28,7 @@ module AssignmentsHelper
     if assignment.due_date.future?
       percentage = percentage_remaining assignment
       if percentage < 33
-        'alert'
+        'danger'
       elsif percentage < 66
         'warning'
       else
