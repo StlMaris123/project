@@ -1,6 +1,6 @@
 <% provide(:title, 'assignments') %>
-<h3>below is a list of the assignments available</h3>
 <div class="col-md-8 col-md-offset-3">
+<h3>below is a list of the assignments available</h3>
   <% if @assignments.any? %>
     <%= @assignments.each do |assignment| %>
       <h3> <%= assignment.id %>. <%= assignment.title %></h3>
@@ -9,9 +9,9 @@
         <%= percentage_remaining(assignment) %> %
       </small>
       <div class="progress">
-        <div class="progress-bar progress-bar-#{coloring(assignment)}" role="progressbar" tabindex="0" aria-value="50"
-                  aria-valuemin="0" aria-valuetext="50 percent" aria-valuemax="100"
-                  style="width: <%= percentage_remaining(assignment) %> %">
+        <div class="progress-bar progress-bar-<%=coloring(assignment)%>" role="progressbar" aria-valuenow=" <%= percentage_remaining(assignment) %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= percentage_remaining(assignment) %>%">
+
+          <span class="sr-only"> <%= percentage_remaining(assignment) %>% remaining</span>
         </div>
       </div>
       <p> <%= assignment.description %></p>
