@@ -8,21 +8,18 @@
         <%= remaining_days(assignment) %> remaining
         <%= percentage_remaining(assignment) %> %
       </small>
-      <%# %div{:class=>"progress #{coloring(assignment)}", :role=>"progressbar", :tabindex=>"0","aria-valuenow"=>"50",
-               "aria-valuemin"=>"0","aria-valuetext"=>"50 percent","aria-valuemax"=>"100"} %>
-             <%#             %div{:class=>"progress-meter", :style=>"width: #{percentage_remaining(assignment)}%"} %>
-             <div class="progress">
-               <div class="progress-bar progress-bar-#{coloring(assignment)}" role="progressbar" tabindex="0" aria-value="50"
-               aria-valuemin="0" aria-valuetext="50 percent" aria-valuemax="100"
-               style="width: <%= percentage_remaining(assignment) %> %">
-               </div>
-             </div>
-             <p> <%= assignment.description %></p>
-             <p> <%=  assignment.link%></p>
-             <% if current_user.admin? %>
-               <p> <%= link_to "delete", assignment, method: :delete,
-                 data: { confirm: "You sure?" }%></p>
-             <% end %>
-           <% end %>
-         <% end %>
+      <div class="progress">
+        <div class="progress-bar progress-bar-#{coloring(assignment)}" role="progressbar" tabindex="0" aria-value="50"
+                  aria-valuemin="0" aria-valuetext="50 percent" aria-valuemax="100"
+                  style="width: <%= percentage_remaining(assignment) %> %">
+        </div>
+      </div>
+      <p> <%= assignment.description %></p>
+      <p> <%=  assignment.link%></p>
+      <% if current_user.admin? %>
+        <p> <%= link_to "delete", assignment, method: :delete,
+          data: { confirm: "You sure?" }%></p>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>
