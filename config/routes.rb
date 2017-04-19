@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   end
   resources :relationships, only: [:create, :destroy]
   resources :feedbacks
+  resources :assignments
   resources :account_activations, only: [:edit]
   resources :password_resets, only:[:new, :create, :edit, :update]
 
