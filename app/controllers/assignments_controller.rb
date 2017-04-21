@@ -10,7 +10,9 @@ class AssignmentsController < ApplicationController
       flash[:success] = "Assignment created"
       User.find_each do |user|
         UserMailer.new_assignment(user, @assignment).deliver
+        user.send_sms("Hello #{user.name}, an assignment has been availed. Please check your dashboard and do it to avoid penalties")
       end
+      # @user = User.find_by(id: params[:id])
     else
       render 'new'
     end

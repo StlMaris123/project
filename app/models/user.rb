@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  require 'AfricasTalkingGateway'
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
   before_create :create_activation_digest
@@ -92,6 +93,20 @@ class User < ApplicationRecord
   
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
+  end
+
+  def send_sms(message)
+    username= ENV['MY_USERNAME']
+    apikey = ENV['MY_API']
+    gateway = AfricasTalkingGateway.new(username, apikey)
+    begin
+      reports = gateway.sendMessage(self.phone_number, message)
+      reports.each {|x|
+        puts 'number=' + x.number + ';status=' + x.status + ';messageId=' + x.messageId + ';cost=' + x.cost
+      }
+    rescue AfricasTalkingGatewayException => ex
+      puts 'Encountered an error:' + ex.message
+    end
   end
 
   private
