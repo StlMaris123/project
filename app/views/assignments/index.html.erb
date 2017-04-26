@@ -4,18 +4,16 @@
   <% if @assignments.any? %>
     <%= @assignments.each do |assignment| %>
       <h3> <%= assignment.id %>. <%= assignment.title %></h3>
-      <small>
         <%= remaining_days(assignment) %> remaining
         <%= percentage_remaining(assignment) %> %
-      </small>
       <div class="progress">
         <div class="progress-bar progress-bar-<%=coloring(assignment)%>" role="progressbar" aria-valuenow=" <%= percentage_remaining(assignment) %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= percentage_remaining(assignment) %>%">
 
           <span class="sr-only"> <%= percentage_remaining(assignment) %>% remaining</span>
         </div>
       </div>
-      <p> <%= assignment.description %></p>
-      <p> <%=  assignment.link%></p>
+      <h5> <%= assignment.description %></h5>
+      <h5> <%=  assignment.link%></h5>
       <% if current_user.admin? %>
         <p> <%= link_to "delete", assignment, method: :delete,
           data: { confirm: "You sure?" }%></p>
