@@ -1,4 +1,7 @@
 class AssignmentsController < ApplicationController
+  before_action :logged_in_user
+  before_action :admin_user, only: [:create, :destroy]
+
   def new
     @assignment = Assignment.new
   end
